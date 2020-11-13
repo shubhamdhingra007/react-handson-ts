@@ -2,6 +2,8 @@
   "name": "my-app-ts",
   "version": "0.1.0",
   "private": true,
+  "homepage": "",
+  "proxy": "",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -10,14 +12,21 @@
     "@types/node": "^12.12.50",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "env-cmd": "^10.1.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "sanitize.css": "^11.0.1",
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "env-cmd -f .env.staging react-scripts start",
+    "start:build": "serve -s build",
+    "https-start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
+    "build:staging": "env-cmd -f .env.staging npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,7 +48,9 @@
   "devDependencies": {
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "serve": "^11.3.2",
+    "source-map-explorer": "^2.4.2"
   },
   "husky": {
     "hooks": {

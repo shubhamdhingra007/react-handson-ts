@@ -1,0 +1,25 @@
+.hello {
+  color: red;
+  margin-top: 0 !important;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.logo {
+  margin-left: 40px;
+  height: 40px;
+}
